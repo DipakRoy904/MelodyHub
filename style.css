@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+/* CRITICAL FIX: Ensures padding does not expand elements past 100% width */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f1e2cd;
+    font-family: 'Varela Round', sans-serif;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+}
+
+nav {
+    background-color: black;
+    color: white;
+    width: 100%;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    height: 65px;
+    padding: 0 20px;
+}
+
+nav ul li {
+    padding: 0 15px;
+    font-size: 16px;
+}
+
+nav ul li.brand {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+}
+
+nav ul li a:hover {
+    color: #1db954; 
+}
+
+/* DESKTOP CONTAINER SYSTEM VIEW */
+.container {
+    height: calc(100vh - 185px); 
+    background-color: black;
+    color: white;
+    display: flex;
+    margin: 15px auto;
+    width: 85%;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.songList {
+    width: 55%;
+    padding: 30px;
+    background: linear-gradient(180deg, rgba(11, 38, 22, 0.85) 0%, rgba(0, 0, 0, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    overflow-y: auto; 
+}
+
+.songList::-webkit-scrollbar {
+    width: 8px;
+}
+.songList::-webkit-scrollbar-track {
+    background: transparent;
+}
+.songList::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 10px;
+}
+
+.songItemContainer {
+    margin-top: 20px;
+}
+
+.songItem {
+    height: 50px;
+    display: flex;
+    background-color: white;
+    color: black;
+    margin: 10px 0;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 34px;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.songItem:hover {
+    transform: scale(1.01);
+}
+
+.songItem img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.timestamp {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.timestamp i {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.songBanner {
+    width: 45%;
+    background-image: url('IMG_9934~2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* FIX: Player HUD elements bound carefully inside screen margins */
+.bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 105px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px 20px;
+    border-top: 1px solid #282828;
+    z-index: 100;
+}
+
+.progress-container {
+    display: flex;
+    align-items: center;
+    width: 85vw;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+#myProgressBar {
+    flex: 1;
+    cursor: pointer;
+    accent-color: #1DB954;
+}
+
+.progress-container span {
+    color: #b3b3b3;
+    font-size: 12px;
+    min-width: 35px;
+}
+
+.player-interface-row {
+    display: flex;
+    width: 85vw;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.icons i {
+    cursor: pointer;
+    margin: 0 15px;
+    font-size: 24px;
+    transition: color 0.2s ease-in-out;
+}
+
+#masterPlay {
+    font-size: 32px;
+}
+
+.icons i:hover {
+    color: #1db954;
+}
+
+.songInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 25%;
+}
+
+.songInfo img {
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+.songInfo span {
+    color: white;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #b3b3b3;
+    width: 25%;
+    justify-content: flex-end;
+}
+
+#volumeSlider {
+    cursor: pointer;
+    accent-color: #1DB954;
+    width: 80px;
+}
+
+/* =======================================================
+   MOBILE SMARTPHONE LAYOUT ENGINE MODES (Max-Width 768px)
+   ======================================================= */
+@media (max-width: 768px) {
+    body {
+        overflow-y: auto; /* Allow layout scroll paths on mobile viewports */
+    }
+
+    .container {
+        width: 95%; 
+        flex-direction: column; /* Stack the image above your track list layout */
+        height: auto;
+        margin: 10px auto 120px auto; 
+        border-radius: 8px;
+    }
+
+    /* THE FIX IS APPLIED HERE */
+    .songBanner {
+        width: 100%;
+        height: 220px; /* Increased height slightly to show more of the body */
+        background-position: top center; /* Keeps the top of the image (the head) visible */
+    }
+
+    .songList {
+        width: 100%; 
+        padding: 15px;
+        height: 380px; /* Limits size to prevent overflow bugs */
+    }
+
+    .bottom {
+        padding: 10px 15px;
+    }
+
+    .progress-container {
+        width: 100%; /* Stretches seeker edge-to-edge on smartphone screen */
+    }
+
+    .player-interface-row {
+        width: 100%;
+    }
+
+    /* Clean UI enhancement: Hide volume track control to save space on small screens */
+    .volume-container {
+        display: none; 
+    }
+
+    .songInfo {
+        width: 50%;
+    }
+}
+
+/* =========================================
+   NEW: PREMIUM 3D SEARCH BAR & MY FAVORITES
+   ========================================= */
+
+.search-container {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 12px 20px 12px 45px;
+    border-radius: 30px;
+    border: none;
+    background: #1a1a1a;
+    color: white;
+    font-family: 'Varela Round', sans-serif;
+    /* Inset shadow creates a 3D "carved into the screen" look */
+    box-shadow: inset 5px 5px 10px #0b0b0b, 
+                inset -5px -5px 10px #292929;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#searchInput:focus {
+    box-shadow: inset 5px 5px 10px #0b0b0b, 
+                inset -5px -5px 10px #1DB954; /* Glows green when clicking */
+}
+
+.search-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #1DB954;
+    font-size: 16px;
+}
+
+/* Unique 3D Pop for "My Favorites" Button */
+.my-favorites-btn {
+    background: linear-gradient(145deg, #1DB954, #127533) !important;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6),
+                -3px -3px 8px rgba(255, 255, 255, 0.1),
+                inset 1px 1px 2px rgba(255, 255, 255, 0.2) !important;
+    color: #fff !important;
+    border: 1px solid #1ed760 !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.my-favorites-btn:hover {
+    background: linear-gradient(145deg, #20d45d, #1ed760) !important;
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0px 10px 20px rgba(29, 185, 84, 0.6),
+                inset 2px 2px 5px rgba(255, 255, 255, 0.6) !important;
+    color: black !important;
+}

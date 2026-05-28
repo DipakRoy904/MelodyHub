@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone_2</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* A little style for your new buttons so they look nice */
+        .friend-filters {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .friend-filters button {
+            padding: 8px 15px;
+            border-radius: 20px;
+            border: none;
+            background-color: #282828;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .friend-filters button:hover {
+            background-color: #1DB954;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <li class="brand"><i class="fa-brands fa-spotify" style="color: #1DB954; margin-right: 8px;"></i> Spotify
+            </li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="songBanner"></div>
+
+        <main class="songList">
+            <h2>Best of Bollywood - Super Hits</h2>
+
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for songs or friends..."
+                    onkeyup="searchSongs()">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            </div>
+
+            <div class="friend-filters">
+                <button onclick="showFavorites('All')">Show All</button>
+                <button onclick="showFavorites('Puja')">Puja's Favorites</button>
+                <button onclick="showFavorites('Sudipta')">Sudipta's Favorites</button>
+                <button onclick="showFavorites('Supriya')">Supriya's Favorites</button>
+                <button onclick="showFavorites('Sanjita')">Sanjita's Favorites</button>
+                <button onclick="showFavorites('Apurbo')">Apurbo's Favorites</button>
+                <button onclick="showFavorites('Sujan')">Sujan's Favorites</button>
+                <button onclick="showFavorites('Palash')">Palash's Favorites</button>
+                <button onclick="showFavorites('Biplab')">Biplab's Favorites</button>
+                <button onclick="showFavorites('Dipak')" class="my-favorites-btn">✨ Dipak's Favorites ✨</button>
+            </div>
+
+            <div class="songItemContainer"></div>
+        </main>
+    </div>
+
+    <footer class="bottom">
+        <div class="progress-container">
+            <span id="currentTimeDisplay">0:00</span>
+            <input type="range" id="myProgressBar" min="0" max="100" value="0">
+            <span id="totalTimeDisplay">0:00</span>
+        </div>
+
+        <div class="player-interface-row">
+            <div class="songInfo">
+                <img src="playing.gif" id="gif" width="30px" alt="playing" style="opacity: 0;">
+                <span id="masterSongName">Select a track</span>
+            </div>
+
+            <div class="icons">
+                <i class="fa-solid fa-backward-step" id="previous"></i>
+                <i class="fa-solid fa-circle-play" id="masterPlay"></i>
+                <i class="fa-solid fa-forward-step" id="next"></i>
+            </div>
+
+            <div class="volume-container">
+                <i class="fa-solid fa-volume-high" id="volumeIcon"></i>
+                <input type="range" id="volumeSlider" min="0" max="100" value="100">
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
