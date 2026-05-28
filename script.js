@@ -15,7 +15,7 @@ let volumeIcon = document.getElementById('volumeIcon');
 
 // 2. Song Playlist Data (NEW: Added Titles and Friend Names)
 let songs = [
-    { filePath: "Tere Naam Alka Yagnik.mp3", coverPath: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=50&q=80", songTitle: "Tere Naam", friendName: "Puja" },
+    { filePath: "puja_songs/Tere Naam Alka Yagnik.mp3", coverPath: "https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?w=50&q=80", songTitle: "Tere Naam", friendName: "Puja" },
     { filePath: "puja_songs/Humein_Tumse_Pyar_Kitna.mp3", coverPath: "https://images.unsplash.com/photo-1458560871784-56d23406c091?w=50&q=80", songTitle: "Hume Tumse Pyar Kitna", friendName: "Puja" },
     { filePath: "puja_songs/Agar Tum Saath Ho Tamasha.mp3", coverPath: "https://images.unsplash.com/photo-1485030056468-3820ff9e6e90?w=50&q=80", songTitle: "Agar Tum Saath Ho", friendName: "Puja" },
     { filePath: "puja_songs/Andekhi Anjaani Mujhse Dosti Karoge.mp3", coverPath: "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=50&q=80", songTitle: "Jane Wo Kaisa Hoga Re", friendName: "Puja" },
