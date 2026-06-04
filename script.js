@@ -50,7 +50,7 @@ let songs = [
     { filePath: "dipak_songs/Tum Hi Ho Aashiqui 2.mp3", coverPath: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=50&q=80", songTitle: "Tum Hi Ho", friendName: "Dipak" },
     { filePath: "dipak_songs/Kaun Mera Special 26.mp3", coverPath: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=50&q=80", songTitle: "Kaun Mera", friendName: "Dipak" },
     { filePath: "dipak_songs/Hawayein.mp3", coverPath: "https://images.unsplash.com/photo-1478147427282-58a87a120781?w=50&q=80", songTitle: "Hawayein", friendName: "Dipak" },
-    { filePath: "dipak_songs/Finding Her Kushagra.mp3", coverPath: "https://images.unsplash.com/photo-1478147427282-58a87a120781?w=50&q=80", songTitle: "Hawayein", friendName: "Dipak" },
+    { filePath: "dipak_songs/Finding Her Kushagra.mp3", coverPath: "https://images.unsplash.com/photo-1478147427282-58a87a120781?w=50&q=80", songTitle: "Finding Her", friendName: "Dipak" },
     { filePath: "dipak_songs/Zaalima.mp3", coverPath: "https://images.unsplash.com/photo-1506157786151-b8491531f063?w=50&q=80", songTitle: "Zaalima", friendName: "Dipak" }
 ];
 
